@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://kushneetmarjara.github.io/sitemap.xml
+
+# Disallow crawling of assets
+User-agent: *
+Disallow: /assets/projects_data/

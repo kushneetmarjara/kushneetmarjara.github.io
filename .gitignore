@@ -1,0 +1,23 @@
+# macOS files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Original unoptimized images (using WebP versions instead)
+assets/images/gallery/*.jpg
+assets/images/gallery/*.JPG
+assets/images/gallery/*.png
+!assets/images/gallery/optimized/*
+
+assets/images/posters/*.jpg
+assets/images/posters/*.png
+!assets/images/posters/optimized/*
+
+# Backup files
+*_heif_backup.*
+*_backup.*
+
+# Temporary files
+*.tmp
+*.swp
+*~

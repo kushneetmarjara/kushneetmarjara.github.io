@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page Not Found - kushneet marjara</title>
+    <meta
+      name="description"
+      content="The page you're looking for doesn't exist."
+    />
+    
+    <!-- Security Headers -->
+    <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=()" />
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <style>
+      .error-container {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        text-align: center;
+      }
+      .error-content {
+        max-width: 600px;
+      }
+      .error-code {
+        font-size: 8rem;
+        font-weight: 700;
+        line-height: 1;
+        margin: 0;
+        color: var(--accent-primary, #A73E3E);
+      }
+      .error-title {
+        font-size: 2rem;
+        margin: 1rem 0;
+        color: var(--text-primary, #111118);
+      }
+      .error-message {
+        font-size: 1.125rem;
+        margin: 1rem 0 2rem;
+        color: var(--text-secondary, #4a4a52);
+      }
+      .error-actions {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    </style>
+  </head>
+  <body>
+    <header id="top">
+      <div class="header-inner">
+        <a class="logo" href="index.html">kushneet marjara</a>
+        <nav class="primary-nav" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="my-work.html">My Work</a>
+          <a href="resume.html">Resume</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+        <button class="mobile-menu-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+      <nav class="mobile-nav" aria-label="Mobile navigation">
+        <a href="index.html">Home</a>
+        <a href="my-work.html">My Work</a>
+        <a href="resume.html">Resume</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <div class="error-container">
+        <div class="error-content">
+          <h1 class="error-code">404</h1>
+          <h2 class="error-title">Page Not Found</h2>
+          <p class="error-message">
+            Oops! The page you're looking for doesn't exist. It might have been moved or deleted.
+          </p>
+          <div class="error-actions">
+            <a href="index.html" class="button button-primary">Go Home</a>
+            <a href="my-work.html" class="button button-outline">View My Work</a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.querySelector('.mobile-menu-toggle');
+      const mobileNav = document.querySelector('.mobile-nav');
+      
+      if (menuToggle && mobileNav) {
+        menuToggle.addEventListener('click', function() {
+          const isOpen = mobileNav.classList.toggle('is-open');
+          menuToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        mobileNav.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.remove('is-open');
+            menuToggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    </script>
+  </body>
+</html>
