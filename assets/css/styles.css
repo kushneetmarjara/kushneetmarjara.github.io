@@ -255,6 +255,7 @@ header {
 .hero-copy p.intro {
   text-align: left;
   text-align-last: left;
+  font-size: 20px;
 }
 .cta-group {
   display: flex;
@@ -328,7 +329,7 @@ header {
 }
 
 .core-inner {
-  max-width: 1220px;
+  max-width: 1400px;
   margin: 0 auto;
   padding: 0 clamp(36px, 4.4vw, 84px);
   display: flex;
@@ -355,7 +356,7 @@ header {
 .core-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(36px, 5.8vw, 96px);
+  gap: clamp(108px, 12vw, 240px);
   align-self: stretch;
   justify-items: center;
 }
@@ -957,9 +958,11 @@ header {
 
 .work-banner-inner {
   position: relative;
-  max-width: 100%;
+  display: inline-block;
   margin: 0 auto;
   padding: 0 clamp(24px, 3vw, 48px);
+  width: fit-content;
+  background-color: #d4eef9;
 }
 
 .work-banner h1 {
@@ -1075,8 +1078,10 @@ header {
 
 .video-wrapper {
   position: relative;
+  max-width: 700px;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
   background: #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
@@ -1085,8 +1090,10 @@ header {
 
 .iframe-wrapper {
   position: relative;
+  max-width: 700px;
   width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  margin: 0 auto;
+  aspect-ratio: 16 / 9;
   background: #1a1a1a;
   border-radius: 8px;
   overflow: hidden;
@@ -1096,7 +1103,10 @@ header {
 .pdf-viewer {
   position: relative;
   width: 100%;
+  max-width: 700px;
+  margin: 0 auto;
   background: #111;
+  aspect-ratio: 4 / 3;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
@@ -1251,6 +1261,19 @@ header {
   margin: 0;
 }
 
+.project-link-highlight {
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 3px;
+  color: var(--accent);
+}
+
+.project-link-highlight:hover,
+.project-link-highlight:focus-visible {
+  color: #ffffff;
+}
+
 /* Posters Grid - Dynamic Masonry Layout */
 .posters-grid {
   position: relative;
@@ -1362,12 +1385,10 @@ header {
 }
 
 @media (min-width: 769px) {
-  .project-item:nth-child(even) {
-    grid-template-columns: 2fr 1fr;
-  }
-
-  .project-item:nth-child(odd) {
-    grid-template-columns: 2fr 1fr;
+  .project-item {
+    grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+    column-gap: clamp(16px, 3vw, 32px);
+    align-items: start;
   }
 }
 
